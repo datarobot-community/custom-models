@@ -4,7 +4,7 @@ This repository contains multiple examples concerning DataRobot's Machine Learni
 
 ## Usage
 
-For each respective guide, follow the instructions in its own <.ipynb> or <.py> file.
+For each respective guide, follow the instructions in its own `.ipynb` or `.py` file.
 
 ## Repository Contents
 
@@ -12,11 +12,21 @@ TODO: Specify what this repository contains, for example if it contains multiple
 
 In some cases you can skip this section.
 
+## Important Links
+
+- To learn to use DataRobot, visit [DataRobot University](https://university.datarobot.com/)
+- For General articles on DataRobot and news, visit [DataRobot Community](https://community.datarobot.com/)
+- End to end DataRobot API [Tutorials for Data Scientists](https://github.com/datarobot-community/tutorials-for-data-scientists)
+- DataRobot API Examples [Examples for Data Scientists](https://github.com/datarobot-community/examples-for-data-scientists)
+
 ## Setup/Installation
 
-TODO: Specify what's required to set this project up for usage
+For the DataRobot model runner (drum) tool, start by following the instructions here: https://github.com/datarobot/datarobot-user-models. Additional information can be found here:
 
-In some cases you can skip this section.
+- https://github.com/datarobot/datarobot-user-models/tree/master/custom_model_runner
+- https://pypi.org/project/datarobot-drum/
+
+The notebooks themselves will also have instructions on how to setup the environment and dependancies needed depending on the taks at hand.
 
 ## Development and Contributing
 

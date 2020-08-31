@@ -21,12 +21,7 @@ In some cases you can skip this section.
 
 ## Setup/Installation
 
-For the DataRobot model runner (drum) tool, start by following the instructions here: https://github.com/datarobot/datarobot-user-models. Additional information can be found here:
-
-- https://github.com/datarobot/datarobot-user-models/tree/master/custom_model_runner
-- https://pypi.org/project/datarobot-drum/
-
-The notebooks themselves will also have instructions on how to setup the environment and dependancies needed depending on the taks at hand.
+Each project folder contains its own instructions on setup and requirements. Furthermore, instructions are also conveniently added to the scripts themselves so that users do not need to share the readme file.
 
 ## Development and Contributing
 

@@ -1,15 +1,10 @@
-# PROJECT TITLE
+# MLOps Examples
 
-TODO: Add a short description of the project.
-It should include the following:
-- What this repository is
-- Who is it for
-- What are the dependencies 
+This repository contains multiple examples concerning DataRobot's Machine Learning Operations (MLOps) solution. The scripts can be followed end to end and customised depending on your problems.
 
 ## Usage
 
-TODO: Specify how to use this project
-This can include running the scripts, or where to find API docs if it's a library, command line tool, or similar.
+For each respective guide, follow the instructions in its own <.ipynb> or <.py> file.
 
 ## Repository Contents
 

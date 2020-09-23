@@ -3,7 +3,7 @@
 This notebook provides an example of how you can use the MLOps Agents to monitor external deployments using DataRobot.
 
 ### Getting Started
-Open `MLOps Agent - Python End to End.ipynb` and follow isntructions.
+Open `MLOps Agent - Python End to End.ipynb` and follow isntructions. Alternatively, you can execute this script using [Google colab](https://colab.research.google.com/drive/1fS_sy2L96PsHHpSJRGst2ZzNILyIWAbb?usp=sharing#scrollTo=4MHiEsQX8dTP)
 
 ### Requirements
 

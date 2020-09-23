@@ -17,6 +17,7 @@ In DataRobot, navigate to your deployment of the external model:
 Usage:
     DataRobot's Monitoring Agent is an advanced feature that enables monitoring for models deployed
     outside of DataRobot. Follow these steps to use this feature.
+    
     1. Download and extract DataRobot's Monitoring Agent tar file. This is available through the
        DataRobot MLOps UI via User icon -> "Developer Tools" -> "External Monitoring Agent".
     2. Open your preferred browser. In toolbar, click "File" -> "Open File".

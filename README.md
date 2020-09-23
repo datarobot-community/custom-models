@@ -16,10 +16,10 @@ For each respective guide, follow the instructions in its own `.ipynb` or `.py` 
 ## Contents
 
 ### MLOps Agents
-- *MLOps Agent Notebook: An example of how you can use DataRobot's MLOps Agents functionality to monitor external deployments. [Python](https://github.com/datarobot-community/mlops-examples/tree/master/MLOps%20Agent), [Google colab](https://colab.research.google.com/drive/1fS_sy2L96PsHHpSJRGst2ZzNILyIWAbb?usp=sharing#scrollTo=4MHiEsQX8dTP)
+- *MLOps Agent Notebook*: An example of how you can use DataRobot's MLOps Agents functionality to monitor external deployments. [Python](https://github.com/datarobot-community/mlops-examples/tree/master/MLOps%20Agent), [Google colab](https://colab.research.google.com/drive/1fS_sy2L96PsHHpSJRGst2ZzNILyIWAbb?usp=sharing#scrollTo=4MHiEsQX8dTP)
 
 ### MLOps DRUM
-- *MLOps DRUM Notebook: An example of you can use the DataRobot Model Runner (DRUM) library to test your custom models before deploying them using DataRobot. [Python](https://github.com/datarobot-community/mlops-examples/tree/master/MLOps%20DRUM)
+- *MLOps DRUM Notebook*: An example of you can use the DataRobot Model Runner (DRUM) library to test your custom models before deploying them using DataRobot. [Python](https://github.com/datarobot-community/mlops-examples/tree/master/MLOps%20DRUM)
 
 ## Setup/Installation
 

@@ -1,6 +1,6 @@
 # MLOps Agent - Python End to End
 
-This notebook provides an example of how you can use the MLOps DataRobot Model Runner (DRUM) library to test your custom models before uploading into DataRobot and deploying them.
+This notebook provides an example of how you can use the MLOps Agents to monitor external deployments using DataRobot.
 
 ### Getting Started
 Open `MLOps Agent - Python End to End.ipynb` and follow isntructions.

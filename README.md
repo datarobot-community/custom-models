@@ -26,6 +26,8 @@ For each respective guide, follow the instructions in its own `.ipynb` or `.py` 
 
 - *Insurance Pricing*: An example of using DRUM on an insurance pricing dataset. [Python](https://github.com/datarobot-community/mlops-examples/tree/master/Custom%20Model%20Examples/Insurance%20Pricing)
 
+- *Boston Housing*: An example of using DRUM on the Boston Housing dataset. Also includes monitoring with MLOps Agents. [Python](https://github.com/datarobot-community/mlops-examples/tree/master/Custom%20Model%20Examples/Boston%20Housing)
+
 ## Setup/Installation
 
 Each project folder contains its own instructions on setup and requirements. Furthermore, instructions are also conveniently added to the scripts themselves so that users do not need to share the readme file.

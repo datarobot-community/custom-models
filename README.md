@@ -24,7 +24,7 @@ For each respective guide, follow the instructions in its own `.ipynb` or `.py` 
 ### Custom Model Examples
 - *Readmissions*: 3 examples of custom models  using the readmissions dataset. [Python](https://github.com/datarobot-community/mlops-examples/tree/master/Custom%20Models%20Examples/Readmissions)
 
-- *Insurance Pricing*: An example of using DRUM on an insurance pricing dataset. [Python](https://github.com/datarobot-community/mlops-examples-wip/tree/master/Custom%20Model%20Examples/Insurance%20Pricing)
+- *Insurance Pricing*: An example of using DRUM on an insurance pricing dataset. [Python](https://github.com/datarobot-community/mlops-examples/tree/master/Custom%20Model%20Examples/Insurance%20Pricing)
 
 ## Setup/Installation
 

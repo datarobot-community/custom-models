@@ -1,0 +1,89 @@
+.container {
+            padding-top: 20px;
+           }
+
+  body {
+        background-color: #eaeaed;
+        font-family: Arial;
+        }
+
+.page-footer {
+            position: relative;
+            background: #47476b;
+            color: white;
+            margin-top:10%;
+            }
+
+  hr {
+      margin-top: 0.05rem;
+      margin-bottom: 0.05rem;
+      border: 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+     }
+
+.card-img-top {
+                width: 100%;
+                height: 17vw;
+                object-fit: cover;
+              }
+
+.btn-secondary{
+                    border: 1px solid #646499; !important;
+                    border-radius: 8px !important;
+                    background-color: #646499 !important;
+                    color: white;
+                    font: normal 18px Arial, sans-serif;
+                    /* width: 150px;
+                    height: 37px; */
+                }
+
+.btn-secondary:hover{
+            border: 1px solid white; !important;
+            background-color: #47476b !important;
+            color: white !important;
+            cursor: pointer !important;
+
+            }
+
+.content img {
+                margin-right:15px;
+                float: left;
+                vertical-align: middle;
+                            }
+
+.top-buffer { margin-top:20px; }
+
+.content {
+            width: 70%;
+            overflow: hidden;
+            height:210px;
+            margin: 50px;
+         }
+
+.img-fluid {
+            width: 210px;
+            height: 150px;
+            vertical-align: top;
+           }
+
+form.example input[type=text] {
+            padding: 10px;
+            font-size: 17px;
+            border: 1px solid grey;
+            float: left;
+            width: 80%;
+            background: #f1f1f1;
+            }
+
+.dropdown-toggle{cursor: pointer;}
+
+form.example button {
+                float: left;
+                width: 20%;
+                padding: 6px;
+                background: #D4D4D4;
+                color: black;
+                border-radius: 5px;
+                border: 1px solid rgb(150, 150, 150);
+                cursor: pointer;
+                }

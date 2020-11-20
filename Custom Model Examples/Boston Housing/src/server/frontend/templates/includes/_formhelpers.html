@@ -1,0 +1,13 @@
+{% macro render_field(field) %}
+
+<div class="form-group col -xs-3">
+        {{ field.label }}
+        {{ field(class_="form-control", type="select") }}
+
+        {% if field.errors %}
+        {% for err in field.errors %}
+            <div class = "errorMessage"><font color = "red" size=1><li>{{ err|e }}</li> </font></div>
+        {% endfor %}
+        {% endif %}
+</div>
+{% endmacro %}

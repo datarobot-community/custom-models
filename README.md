@@ -21,6 +21,9 @@ For each respective guide, follow the instructions in its own `.ipynb` or `.py` 
 ### MLOps DRUM
 - *MLOps DRUM Notebook*: An example of you can use the DataRobot Model Runner (DRUM) library to test your custom models before deploying them using DataRobot. [Python](https://github.com/datarobot-community/mlops-examples/tree/master/MLOps%20DRUM)
 
+### Custom Models Example
+- *Readmissions*: 3 examples of custom models  using the readmissions dataset. [Python]()
+
 ## Setup/Installation
 
 Each project folder contains its own instructions on setup and requirements. Furthermore, instructions are also conveniently added to the scripts themselves so that users do not need to share the readme file.

@@ -2,6 +2,8 @@
 
 This folder includes various examples of custom models using the well known  `Hospital Readmissions` dataset. There are three examples (Level 1 - 3) with each level presenting a more complicated example of custom model than the one previously to it.
 
+Make sure you use "Python Keras-Drop in" environment from the UI if you do not use the DRUM package to verify the model integrity locally.
+
 ## Important Links
 
 For more information on how to use DRUM to test and deploy your custom models, follow the [link](https://github.com/datarobot-community/mlops-examples/tree/master/MLOps%20DRUM)

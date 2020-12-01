@@ -49,7 +49,7 @@ def load_model(code_dir):
     return model
 
 def score(data, model, **kwargs):
-    results = model.predict_proba(data)
+    results = model.predict(data)
 
     #Create two columns with probability results
     predictions = pd.DataFrame({'yes': results[:, 0]})

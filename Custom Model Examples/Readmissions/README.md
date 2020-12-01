@@ -2,7 +2,14 @@
 
 This folder includes various examples of custom models using the well known  `Hospital Readmissions` dataset. There are three examples (Level 1 - 3) with each level presenting a more complicated example of custom model than the one previously to it.
 
-Make sure you use "Python Keras-Drop in" environment from the UI if you do not use the DRUM package to verify the model integrity locally.
+Make sure you use `Python Scikit-Learn Drop in` environment from the UI if you do not use the DRUM package to verify the model integrity locally.
+
+## Creating environment
+The easiest way to create an environment to both train and test these models with drum, would be to execute the below commands after you install conda.
+
+`conda create --name your-env-name python=3.7.0`
+`conda activate your-env-name`
+`pip install -r requirements.txt`
 
 ## Important Links
 

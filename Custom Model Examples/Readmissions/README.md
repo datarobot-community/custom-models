@@ -2,7 +2,9 @@
 
 This folder includes various examples of custom models using the well known  `Hospital Readmissions` dataset. There are three examples (Level 1 - 3) with each level presenting a more complicated example of custom model than the one previously to it.
 
-Make sure you use `Python Scikit-Learn Drop in` environment from the UI if you do not use the DRUM package to verify the model integrity locally.
+In the `custom.py` scripts, we use all of the available hook functions including the `fit` function. This means that these examples can be used as both `custom inference` and `custom training` models. To see the difference between the two, check the official DataRobot-Drum package documentation in GitHub [here](https://github.com/datarobot/datarobot-user-models)
+
+If you try to upload the models in DataRobot using the UI, make sure to choose `Scikit-Learn Drop in` environment.
 
 ## Creating environment
 The easiest way to create an environment to both train and test these models with drum, would be to execute the below commands after you install conda.

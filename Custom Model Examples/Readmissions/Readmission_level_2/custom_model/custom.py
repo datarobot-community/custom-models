@@ -1,13 +1,81 @@
-from tensorflow import keras
-import os
 import pandas as pd
+import numpy as np
 import joblib
-import scipy.sparse
+from xgboost import XGBClassifier
+
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler,OneHotEncoder
+from sklearn.impute import SimpleImputer
+
+import os
+from typing import List, Optional
 
 g_code_dir = None
+
 def init(code_dir):
     global g_code_dir
     g_code_dir = code_dir
+
+def read_input_data(input_filename):
+    data = pd.read_csv(input_filename)
+    try:
+        data.drop(['diag_1_desc'],axis=1,inplace=True)
+    except:
+        pass
+
+    return data
+
+def fit(
+    X: pd.DataFrame,
+    y: pd.Series,
+    output_dir = str,
+    class_order: Optional[List[str]] = None,
+    row_weights: Optional[np.ndarray] = None,
+    **kwargs,
+) -> None:
+
+    #Drop diag_1_desc columns
+    try:
+        X.drop(['diag_1_desc'],axis=1,inplace=True)
+    except:
+        pass
+
+    #Preprocessing for numerical features
+    numeric_features = list(X.select_dtypes('int64').columns)
+    numeric_transformer = Pipeline(steps=[
+        ('imputer', SimpleImputer(strategy='median')),
+        ('scaler', StandardScaler())])
+
+    #Preprocessing for categorical features
+    categorical_features = list(X.select_dtypes('object').columns)
+    categorical_transformer = Pipeline(steps=[
+        ('imputer', SimpleImputer(strategy='constant', fill_value='missing')),
+        ('onehot', OneHotEncoder(handle_unknown='ignore'))])
+
+    #Preprocessor with all of the steps
+    preprocessor = ColumnTransformer(
+        transformers=[
+            ('num', numeric_transformer, numeric_features),
+            ('cat', categorical_transformer, categorical_features)])
+
+    # Full preprocessing pipeline
+    pipeline = Pipeline(steps=[('preprocessor', preprocessor)])
+
+    #Train the model-Pipeline
+    pipeline.fit(X,y)
+
+    #Preprocess x
+    preprocessed = pipeline.transform(X)
+    preprocessed = pd.DataFrame.sparse.from_spmatrix(preprocessed)
+
+    model = XGBClassifier()
+    model.fit(preprocessed, y)
+
+
+    joblib.dump(pipeline,'{}/preprocessing.pkl'.format(output_dir))
+    joblib.dump(model,'{}/model.pkl'.format(output_dir))
+
 
 def transform(data, model):
     """
@@ -23,7 +91,12 @@ def transform(data, model):
     -------
     pd.DataFrame
     """
-    # Execute any steps you need to do before scoring
+
+    # Make sure data types are correct for my multi-type columns.
+    data['race'] = data['race'].astype('object')
+    data['diag_1'] = data['diag_1'].astype('str')
+    data['diag_2'] = data['diag_2'].astype('str')
+    data['diag_3'] = data['diag_3'].astype('str')
 
     pipeline_path = 'preprocessing.pkl'
     pipeline = joblib.load(os.path.join(g_code_dir, pipeline_path))
@@ -33,15 +106,13 @@ def transform(data, model):
     return data
 
 def load_model(code_dir):
-    model_path = 'model.h5'
-    model = keras.models.load_model(os.path.join(code_dir, model_path))
+    model_path = 'model.pkl'
+    model = joblib.load(os.path.join(code_dir, model_path))
+
     return model
 
 def score(data, model, **kwargs):
-    results = model.predict(data)
-
-    #Create two columns with probability results
-    predictions = pd.DataFrame({'yes': results[:, 0]})
-    predictions['no'] = 1 - predictions['yes']
+    results = model.predict_proba(data)
+    predictions = pd.DataFrame({'True': results[:, 0], 'False':results[:, 1]})
 
     return predictions

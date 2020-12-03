@@ -4,7 +4,7 @@ This folder includes various examples of custom models using the well known  `Ho
 
 In the `custom.py` scripts, we use all of the available hook functions including the `fit` function. This means that these examples can be used as both `custom inference` and `custom training` models. To see the difference between the two, check the official DataRobot-Drum package documentation in GitHub [here](https://github.com/datarobot/datarobot-user-models)
 
-If you try to upload the models in DataRobot using the UI, make sure to choose `Scikit-Learn Drop in` environment.
+If you try to upload the models in DataRobot using the UI, make sure to choose `Scikit-Learn Drop in` environment. Lastly, make sure you upload the items saved inside `custom_model` folder and not the custom folder itself.
 
 ## Creating environment
 The easiest way to create an environment to both train and test these models with drum, would be to execute the below commands after you install conda.
@@ -32,9 +32,9 @@ For more information on how to use DRUM to test and deploy your custom models, f
 *High Level Overview:*
 
 1. Preprocess Data using scikit-learn pipeline
-2. Fit Keras model on the data
+2. Fit XGboost model on the data
 3. `custom.py` script needs to preprocess using the scikit-learn pipeline 
-4. `custom.py` script needs to score using the Keras Model.
+4. `custom.py` script needs to score using the XGboost Model.
 
 The extra difficulty here is that we need to define where DRUM is to find both of the preprocessing and the keras model in order for this custom model to work.
 
@@ -45,7 +45,7 @@ The biostatisticians at ABC labs have a legacy model that they are using to pred
 *High Level Overview:*
 
 1. Preprocess Data using scikit-learn pipeline
-2. Fit Keras model on the data
+2. Fit XGboost model on the data
 3. `custom.py` script needs to preprocess using the scikit-learn pipeline 
-4. `custom.py` script needs to score using the Keras Model.
-4. `custom.py` script needs to return the average probability as calculated from Keras + legacy model.
+4. `custom.py` script needs to score using the XGboost Model.
+4. `custom.py` script needs to return the average probability as calculated from XGboost + legacy model.

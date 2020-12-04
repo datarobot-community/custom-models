@@ -6,12 +6,13 @@ from xgboost import XGBClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler,OneHotEncoder
-from sklearn.impute import SimpleImputer
 
 import os
 from typing import List, Optional
-
+from scipy.special import expit
 g_code_dir = None
+
+schema = {"race": "object", "gender": "object", "age": "object", "weight": "object", "admission_type_id": "object", "discharge_disposition_id": "object", "admission_source_id": "object", "time_in_hospital": "int64", "payer_code": "object", "medical_specialty": "object", "num_lab_procedures": "int64", "num_procedures": "int64", "num_medications": "int64", "number_outpatient": "int64", "number_emergency": "int64", "number_inpatient": "int64", "number_diagnoses": "int64", "max_glu_serum": "object", "A1Cresult": "object", "metformin": "object", "repaglinide": "object", "nateglinide": "object", "chlorpropamide": "object", "glimepiride": "object", "acetohexamide": "object", "glipizide": "object", "glyburide": "object", "tolbutamide": "object", "pioglitazone": "object", "rosiglitazone": "object", "acarbose": "object", "miglitol": "object", "troglitazone": "object", "tolazamide": "object", "examide": "object", "citoglipton": "object", "insulin": "object", "glyburide_metformin": "object", "glipizide_metformin": "object", "glimepiride_pioglitazone": "object", "metformin_rosiglitazone": "object", "metformin_pioglitazone": "object", "change": "object", "diabetesMed": "object"}
 
 def init(code_dir):
     global g_code_dir
@@ -19,11 +20,9 @@ def init(code_dir):
 
 def read_input_data(input_filename):
     data = pd.read_csv(input_filename)
-    try:
-        data.drop(['diag_1_desc'],axis=1,inplace=True)
-    except:
-        pass
+    data.drop(['diag_1_desc', 'diag_1', 'diag_2', 'diag_3'],axis=1,inplace=True)
 
+    #Saving this for later
     return data
 
 def fit(
@@ -35,23 +34,22 @@ def fit(
     **kwargs,
 ) -> None:
 
-    #Drop diag_1_desc columns
-    try:
-        X.drop(['diag_1_desc'],axis=1,inplace=True)
-    except:
-        pass
+    X.drop(['diag_1_desc', 'diag_1', 'diag_2', 'diag_3'],axis=1,inplace=True)
+    X = X.astype(schema)
 
     #Preprocessing for numerical features
     numeric_features = list(X.select_dtypes('int64').columns)
+    for c in numeric_features:
+        X[c] = X[c].fillna(0)
     numeric_transformer = Pipeline(steps=[
-        ('imputer', SimpleImputer(strategy='median')),
         ('scaler', StandardScaler())])
 
     #Preprocessing for categorical features
     categorical_features = list(X.select_dtypes('object').columns)
+    for c in categorical_features:
+        X[c] = X[c].fillna('missing')
     categorical_transformer = Pipeline(steps=[
-        ('imputer', SimpleImputer(strategy='constant', fill_value='missing')),
-        ('onehot', OneHotEncoder(handle_unknown='ignore'))])
+        ('OneHotEncoder', OneHotEncoder(handle_unknown='ignore'))])
 
     #Preprocessor with all of the steps
     preprocessor = ColumnTransformer(
@@ -62,16 +60,15 @@ def fit(
     # Full preprocessing pipeline
     pipeline = Pipeline(steps=[('preprocessor', preprocessor)])
 
-    #Train the model-Pipeline
+    #Train the model-Pipelines
     pipeline.fit(X,y)
 
     #Preprocess x
     preprocessed = pipeline.transform(X)
     preprocessed = pd.DataFrame.sparse.from_spmatrix(preprocessed)
 
-    model = XGBClassifier()
+    model = XGBClassifier(colsample_bylevel=0.2, max_depth= 10, learning_rate = 0.02, n_estimators=300)
     model.fit(preprocessed, y)
-
 
     joblib.dump(pipeline,'{}/preprocessing.pkl'.format(output_dir))
     joblib.dump(model,'{}/model.pkl'.format(output_dir))
@@ -92,23 +89,23 @@ def transform(data, model):
     pd.DataFrame
     """
 
-    # Make sure data types are correct for my multi-type columns.
-    data['race'] = data['race'].astype('object')
-    data['diag_1'] = data['diag_1'].astype('str')
-    data['diag_2'] = data['diag_2'].astype('str')
-    data['diag_3'] = data['diag_3'].astype('str')
+    #Handle null values in categories and numerics
+    for c,dt in schema.items():
+        if dt =='object':
+            data[c] = data[c].fillna('missing')
+        else:
+            data[c] = data[c].fillna(0)
 
     pipeline_path = 'preprocessing.pkl'
     pipeline = joblib.load(os.path.join(g_code_dir, pipeline_path))
-    transformed = pipeline.transform(data)
-    data = pd.DataFrame.sparse.from_spmatrix(transformed)
+    preprocessed = pipeline.transform(data)
+    preprocessed = pd.DataFrame.sparse.from_spmatrix(preprocessed)
     
-    return data
+    return preprocessed
 
 def load_model(code_dir):
     model_path = 'model.pkl'
     model = joblib.load(os.path.join(code_dir, model_path))
-
     return model
 
 def score(data, model, **kwargs):

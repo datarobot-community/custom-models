@@ -22,7 +22,7 @@ For each respective guide, follow the instructions in its own `.ipynb` or `.py` 
 - *MLOps DRUM Notebook*: An example of you can use the DataRobot Model Runner (DRUM) library to test your custom models before deploying them using DataRobot. [Python](https://github.com/datarobot-community/mlops-examples/tree/master/MLOps%20DRUM)
 
 ### Custom Model Examples
-- *Readmissions*: 3 examples of custom models  using the readmissions dataset. [Python](https://github.com/datarobot-community/mlops-examples/tree/master/Custom%20Models%20Examples/Readmissions)
+- *Readmissions*: 3 examples of custom models  using the readmissions dataset. [Python](https://github.com/datarobot-community/mlops-examples/tree/master/Custom%20Model%20Examples/Readmissions)
 
 - *Insurance Pricing*: An example of using DRUM on an insurance pricing dataset. [Python](https://github.com/datarobot-community/mlops-examples/tree/master/Custom%20Model%20Examples/Insurance%20Pricing)
 

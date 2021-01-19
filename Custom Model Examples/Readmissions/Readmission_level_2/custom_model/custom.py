@@ -8,6 +8,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler,OneHotEncoder
 
 import os
+import io
 from typing import List, Optional
 from scipy.special import expit
 g_code_dir = None
@@ -18,8 +19,8 @@ def init(code_dir):
     global g_code_dir
     g_code_dir = code_dir
 
-def read_input_data(input_filename):
-    data = pd.read_csv(input_filename)
+def read_input_data(input_binary_data):
+    data = pd.read_csv(io.BytesIO(input_binary_data))
     data.drop(['diag_1_desc', 'diag_1', 'diag_2', 'diag_3'],axis=1,inplace=True)
 
     #Saving this for later

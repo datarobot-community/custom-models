@@ -11,6 +11,7 @@ from sklearn.impute import SimpleImputer
 import os
 from typing import List, Optional
 from scipy.special import expit
+import io
 
 g_input_filename = None
 g_code_dir = None
@@ -21,13 +22,13 @@ def init(code_dir):
     global g_code_dir
     g_code_dir = code_dir
 
-def read_input_data(input_filename):
-    data = pd.read_csv(input_filename)
+def read_input_data(input_binary_data):
+    data = pd.read_csv(io.BytesIO(input_binary_data))
     data.drop(['diag_1_desc', 'diag_1', 'diag_2', 'diag_3'],axis=1,inplace=True)
 
     #Saving this for later
     global g_input_filename
-    g_input_filename = input_filename
+    g_input_filename = input_binary_data
     return data
 
 def fit(
@@ -121,7 +122,7 @@ def score(data, model, **kwargs):
 
 #Adding post_process to use legacy model together with Keras model
 def post_process(predictions,model):
-    original_data = pd.read_csv(g_input_filename)
+    original_data = pd.read_csv(io.BytesIO(g_input_filename))
     original_data.fillna(0,inplace=True)
 
     def legacy_score(row):

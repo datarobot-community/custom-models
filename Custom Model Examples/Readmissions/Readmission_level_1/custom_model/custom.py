@@ -4,10 +4,10 @@ import pandas as pd
 import numpy as np
 from typing import List, Optional
 from catboost import CatBoostClassifier
+import io
 
-def read_input_data(input_filename):
-    data = pd.read_csv(input_filename)
-    return data
+def read_input_data(input_binary_data):
+    return pd.read_csv(io.BytesIO(input_binary_data))
 
 def fit(
     X: pd.DataFrame,

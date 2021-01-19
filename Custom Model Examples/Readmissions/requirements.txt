@@ -20,5 +20,5 @@ pandas==0.25.1
 scipy==1.5.3
 scikit_learn==0.22.0
 catboost==0.24.2
-datarobot-drum==1.4.4
+datarobot-drum==1.4.10
 xgboost==1.2.1

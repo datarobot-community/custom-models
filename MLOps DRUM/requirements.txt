@@ -33,4 +33,4 @@ scipy==1.5.4
 threadpoolctl==2.1.0
 trafaret==1.2.0
 urllib3==1.25.11
-datarobot-drum==1.4.6
+datarobot-drum==1.5.4

@@ -1,0 +1,73 @@
+{
+    "namespace": "imdb.graph.avro",
+    "type": "record",
+    "name": "graph",
+    "fields": [
+        {
+            "name": "index",
+            "type": "int"
+        },
+        {
+            "name": "edges",
+            "type": [
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": "int",
+                        "default": []
+                    },
+                    "default": []
+                },
+                "null"
+            ]
+        },
+        {
+            "name": "vertices",
+            "type": [
+                {
+                    "type": "array",
+                    "items": "int",
+                    "default": []
+                }, "null"
+            ]
+        },
+        {
+            "name": "label",
+            "type": [
+                "int",
+                "null"
+            ]
+        },
+        {
+            "name": "edge_features",
+            "type": [
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": "float",
+                        "default": []
+                    },
+                    "default": []
+                },
+                "null"
+            ]
+        },
+        {
+            "name": "vertex_features",
+            "type": [
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": "float",
+                        "default": []
+                    },
+                    "default": []
+                },
+                "null"
+            ]
+        }
+    ]
+}

@@ -1,4 +1,0 @@
-networkx==2.5
-dgl==0.5.2
-avro==1.10.0
-datarobot-drum==1.4.2

@@ -1,7 +1,0 @@
-
-
-Validation checks results
-      Test case          Status   Details
-=========================================
-Basic batch prediction   PASSED          
-Null value imputation    PASSED          

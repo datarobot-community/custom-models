@@ -1,0 +1,29 @@
+Categorical:
+- DistributionChannel
+- VehicleModel
+- Zipcode
+- VehicleMake
+- ClientType
+- MaritalStatus
+Date: None
+Numeric: 
+- CustomerTenure
+- DriverAge
+- EngineCapacity
+- NumberOfDrivers
+- VehicleAge
+- VehicleCostNew
+- Zipcode_Aged_18_24
+- Zipcode_Aged_25_29
+- Zipcode_Aged_30_39
+- Zipcode_Aged_40_44
+- Zipcode_Aged_45_49
+- Zipcode_Aged_50_59
+- Zipcode_Aged_60
+- Zipcode_CommuteViaCar
+- Zipcode_PersonsPerHousehold
+- Zipcode_VehiclesPerHousehold
+- Zipcode_annualMileage
+Offset: Exposure
+Target: IncurredClaims
+Text: None

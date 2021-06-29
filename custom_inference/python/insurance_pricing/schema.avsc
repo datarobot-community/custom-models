@@ -1,0 +1,21 @@
+{
+    "fields": [
+        {
+            "name": "prediction",
+            "type": "float"
+        },
+        {
+            "name": "shap_values",
+            "type": [
+                {
+                    "type": "map",
+                    "values": "float",
+                    "default": {}
+                }
+            ]
+        }
+    ],
+    "namespace": "shap.avro",
+    "type": "record",
+    "name": "predictions"
+}

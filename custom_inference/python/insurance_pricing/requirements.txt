@@ -1,0 +1,10 @@
+joblib==0.16.0
+lightgbm==2.3.1
+numpy==1.19.0
+pandas==1.1.0
+scikit-learn==0.23.1
+scipy==1.5.1
+PyYAML==5.1.1
+category-encoders==2.2.2
+shap==0.37.0
+avro==1.10.0

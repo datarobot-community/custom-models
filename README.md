@@ -27,10 +27,10 @@ Some of the notebooks can also be executed through Google Colab.
 - *MLOps Tracking Agent Notebook*: An example of how you can use DataRobot's MLOps Agents functionality to monitor external deployments. [Python](https://github.com/datarobot-community/custom-models/tree/master/tracking_agents/python)
 
 ### MLOps DRUM Overview
-- *MLOps DRUM Notebook*: An example of you can use the DataRobot Model Runner (DRUM) library to test your custom models before deploying them using DataRobot. [Python](https://github.com/datarobot-community/mlops-examples/tree/master/MLOps%20DRUM)
+- *MLOps DRUM Notebook*: An example of you can use the DataRobot Model Runner (DRUM) library to test your custom models before deploying them using DataRobot. [Python](https://github.com/datarobot-community/custom-models/blob/master/drum_overview/Main_Script.ipynb)
 
 ### Custom Inference Model Examples
-- *Custom Inference Models*: Examples in multiple languages on how to create custom inference models. Some of the scripts have been updated to also include the code needed to run this as a custom training model: [Multiple Languages](https://github.com/datarobot-community/mlops-examples/tree/master/Custom%20Model%20Examples/Readmissions)
+- *Custom Inference Models*: Examples in multiple languages on how to create custom inference models. Some of the scripts have been updated to also include the code needed to run this as a custom training model: [Multiple Languages](https://github.com/datarobot-community/custom-models/tree/master/custom_inference)
 
 ### Custom Tasks
 - *Custom Tasks*: Examples of custom-tasks that you can use directly within the DataRobot platform to manipulate blueprints. Check out how they look like and create your own tasks! [Multiple Languages](https://github.com/datarobot-community/custom-models/tree/master/custom_tasks)

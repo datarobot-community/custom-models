@@ -15,7 +15,7 @@ Guidelines for developing and contributing to this project.
 
 ## Making a pull request 
 
-Please Communicate directly with Thodoris Petropoulos and Matthew Cohen above to request any changes to the repository. Given the sensitive nature of API Keys, we want to make sure no API key gets leaked because of a PR.
+Due to security concerns (API Keys leaking by mistake), please communicate directly with [Thodoris Petropoulos](https://github.com/TheoPetropoulos) and/or [Matthew Cohen](https://github.com/mcohenmcohen) to request any changes in this repository. 
 
 ## Responding to issues and pull requests
 

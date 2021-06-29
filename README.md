@@ -6,11 +6,11 @@ This repository contains multiple examples concerning DataRobot's Machine Learni
 
 For each respective guide, follow the instructions in its own `.ipynb` or `.py` file. There will also be a `requirements.txt` file in each folder with instructions on how to create an environment to run everything successfully.
 
-To understand a bit more of how each one is supposed to be used:
-- *MLOps Tracking Agents*: MLOps Tracking Agents are used when you want to deploy external models and monitor them in DataRobot. For example, you have a custom (or DataRobot) model and you deploy it in your own Kubernetes cluster (or anywhere really). In those cases, MLOps tracking agents will sent statistic data back to DataRobot MLOps so that you can still monitor your model.
-- *MLOps DRUM overview*: MLOps DRUM is an open-source framework created and managed by DataRobot that allows you to easily deploy custom models. It provides out of the box consistency & validity checks, as well as single command deployment. DRUM has another positive attribute to it: If you build your models using the framework, then you can use your custom models directly within the DataRobot platform. You can either deploy your models in the DataRobot platform (using the UI) or you can train the models within the model leaderboard.
-- *Custom Inference Models*: End to end examples of how your custom models need to look like in order to deploy them using the DataRobot platform and architecture.
-- *Custom Tasks*: With Composable AI, DataRobot allows you to manipulate DataRobot created blueprints and add your own custom preprocessing step. Within custom tasks, there are examples of how your code needs to look like to achieve that.
+Here is some explanation of the different definitions used throughout: 
+- **MLOps Tracking Agents**: MLOps Tracking Agents are used when you want to deploy external models and monitor them in DataRobot. For example, you have a custom (or DataRobot) model and you deploy it in your own Kubernetes cluster (or anywhere really). In those cases, MLOps tracking agents will sent statistic data back to DataRobot MLOps so that you can still monitor your model.
+- **MLOps DRUM overview**: MLOps DRUM is an open-source framework created and managed by DataRobot that allows you to easily deploy custom models. It provides out of the box consistency & validity checks, as well as single command deployment. DRUM has another positive attribute to it: If you build your models using the framework, then you can use your custom models directly within the DataRobot platform. You can either deploy your models in the DataRobot platform (using the UI) or you can train the models within the model leaderboard.
+- **Custom Inference Models**: End to end examples of how your custom models need to look like in order to deploy them using the DataRobot platform and architecture.
+- **Custom Tasks**: With Composable AI, DataRobot allows you to manipulate DataRobot created blueprints and add your own custom preprocessing step. Within custom tasks, there are examples of how your code needs to look like to achieve that.
 
 Some of the notebooks can also be executed through Google Colab.
 

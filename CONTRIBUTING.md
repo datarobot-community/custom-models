@@ -15,10 +15,7 @@ Guidelines for developing and contributing to this project.
 
 ## Making a pull request 
 
-- Have a branch with a descriptive name
-- Squash / rebase your commits before opening your pull request
-- Pull the latest changes from `master`
-- Provide sufficient description of the pull request. Include whether it relates to an existing issue, and specify what the pull request does - (bug fix, documentation correction, dependency update, new functionality, etc...). When in doubt, overcommunicate
+Please Communicate directly with Thodoris Petropoulos and Matthew Cohen above to request any changes to the repository. Given the sensitive nature of API Keys, we want to make sure no API key gets leaked because of a PR.
 
 ## Responding to issues and pull requests
 

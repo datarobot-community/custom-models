@@ -1,4 +1,4 @@
-# Catboost Target Encoding
+# Hash Encoding
 
 ### Overview
 
@@ -20,8 +20,6 @@ tbd
 
 ### References
 
-https://contrib.scikit-learn.org/category_encoders/catboost.html#
+https://alex.smola.org/papers/2009/Weinbergeretal09.pdf
 
-https://tech.yandex.com/catboost/doc/dg/concepts/algorithm-main-stages_cat-to-numberic-docpage/
-
-https://arxiv.org/abs/1706.09516
+https://booking.ai/dont-be-tricked-by-the-hashing-trick-192a6aae3087

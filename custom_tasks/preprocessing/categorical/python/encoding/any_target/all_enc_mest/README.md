@@ -1,4 +1,4 @@
-# Catboost Target Encoding
+# M-estimate Target Encoding
 
 ### Overview
 
@@ -20,8 +20,8 @@ tbd
 
 ### References
 
-https://contrib.scikit-learn.org/category_encoders/catboost.html#
+https://dl.acm.org/citation.cfm?id=507538
 
-https://tech.yandex.com/catboost/doc/dg/concepts/algorithm-main-stages_cat-to-numberic-docpage/
+https://link.springer.com/chapter/10.1007/BFb0017010
 
-https://arxiv.org/abs/1706.09516
+https://en.wikipedia.org/wiki/Additive_smoothing#Generalized_to_the_case_of_known_incidence_rates

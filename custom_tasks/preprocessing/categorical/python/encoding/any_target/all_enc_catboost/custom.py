@@ -7,7 +7,7 @@ import pickle
 def fit(X, y, output_dir, **kwargs):
     """ This hook defines how DataRobot will train this task. Even transform tasks need to be trained to learn/store information from training data
     DataRobot runs this hook when the task is being trained inside a blueprint.
-    As an output, this hook is expected to create an artifact containg a trained object [in this example - median of each numeric column], that is then used to transform new data.
+    As an output, this hook is expected to create an artifact containg a trained object [in this example - a pre-fit CatBoost encoder], that is then used to transform new data.
     The input parameters are passed by DataRobot based on project and blueprint configuration.
 
     Parameters
@@ -17,7 +17,7 @@ def fit(X, y, output_dir, **kwargs):
     y: pd.Series
         Project's target column (None is passed for unsupervised projects).
     output_dir: str
-        A path to the output folder; the artifact [in this example - containing median of each numeric column] must be saved into this folder to be re-used in transform().
+        A path to the output folder; the artifact [a pickle file containing a pre-fit CatBoost Encoder] must be saved into this folder to be re-used in transform().
 
     Returns
     -------
@@ -51,7 +51,7 @@ def transform(data, transformer):
         Data that DataRobot passes for transformation.
     transformer: Any
         Trained object, extracted by DataRobot from the artifact created inside fit().
-        In this example, it's a dictionary with medians per column extracted from artifact.pkl.
+        In this example, it's a pickle file containing a pre-fit CatBoost Encoder.
     
     Returns
     -------

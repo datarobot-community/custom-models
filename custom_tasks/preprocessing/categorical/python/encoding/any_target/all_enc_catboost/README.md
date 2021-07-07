@@ -1,19 +1,14 @@
 # Catboost Target Encoding
 
 ### Overview
-
+```
 [ ] accepts numeric inputs
-
 [x] accepts categorical inputs
-
 [ ] outputs missing values
-
 [x] works for binary targets (tested in DataRobot and confirmed)
-
 [?] works for multiclass targets
-
 [x] works for numeric targets (tested in DataRobot and confirmed)
-
+```
 ### Description
 
 tbd

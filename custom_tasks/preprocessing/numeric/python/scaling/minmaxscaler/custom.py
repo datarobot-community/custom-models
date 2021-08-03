@@ -31,9 +31,7 @@ def fit(X, y, output_dir, **kwargs):
     scaler = MinMaxScaler()
     scaler.fit(X.values)
 
-    # dump the trained object 
-    # into an artifact [in this example - minmaxscaler.pkl]
-    # and save it into output_dir so that it can be used later to impute on new data
+    # Dump fit scaler to artifact to use for transforms
     with open(os.path.join(output_dir, 'minmaxscaler.pkl'), "wb") as fp:
         pickle.dump(scaler, fp)
 

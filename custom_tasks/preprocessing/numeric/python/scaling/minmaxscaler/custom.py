@@ -38,7 +38,7 @@ def fit(X, y, output_dir, **kwargs):
     # Save the transformed input df as an object to inspect and confirm the scaler is working
     transformed = pd.DataFrame(scaler.transform(X.values))
 
-    transformed.to_csv("{}/transformed.csv".format(output_dir), index = False)
+    transformed.to_csv(os.path.join(output_dir, "transformed.csv"), index = False)
 
 def transform(data, transformer): 
     """ This hook defines how DataRobot will use the trained object from fit() to transform new data.
@@ -62,5 +62,4 @@ def transform(data, transformer):
     transformed = pd.DataFrame(transformer.transform(data.values), columns=data.columns).fillna(np.nan)
 
     return transformed
-
 

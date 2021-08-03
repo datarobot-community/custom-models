@@ -3,6 +3,7 @@ from pathlib import Path
 import pickle
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
+import os
 
 def fit(X, y, output_dir, **kwargs):
     """ This hook defines how DataRobot will train this task. Even transform tasks need to be trained to learn/store information from training data
@@ -33,7 +34,7 @@ def fit(X, y, output_dir, **kwargs):
     # dump the trained object 
     # into an artifact [in this example - minmaxscaler.pkl]
     # and save it into output_dir so that it can be used later to impute on new data
-    with open("{}/minmaxscaler.pkl".format(output_dir), "wb") as fp:
+    with open(os.path.join(output_dir, 'minmaxscaler.pkl'), "wb") as fp:
         pickle.dump(scaler, fp)
 
     # Save the transformed input df as an object to inspect and confirm the scaler is working

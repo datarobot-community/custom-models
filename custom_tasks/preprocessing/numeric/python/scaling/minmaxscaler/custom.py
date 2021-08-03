@@ -33,15 +33,13 @@ def fit(X, y, output_dir, **kwargs):
     # dump the trained object 
     # into an artifact [in this example - minmaxscaler.pkl]
     # and save it into output_dir so that it can be used later to impute on new data
-    output_dir_path = Path(output_dir)
-    if output_dir_path.exists() and output_dir_path.is_dir():
-        with open("{}/minmaxscaler.pkl".format(output_dir), "wb") as fp:
-            pickle.dump(scaler, fp)
+    with open("{}/minmaxscaler.pkl".format(output_dir), "wb") as fp:
+        pickle.dump(scaler, fp)
 
     # Save the transformed input df as an object to inspect and confirm the scaler is working
     transformed = pd.DataFrame(scaler.transform(X.values))
-    if output_dir_path.exists() and output_dir_path.is_dir():
-        transformed.to_csv("{}/transformed.csv".format(output_dir), index = False)
+
+    transformed.to_csv("{}/transformed.csv".format(output_dir), index = False)
 
 def transform(data, transformer): 
     """ This hook defines how DataRobot will use the trained object from fit() to transform new data.

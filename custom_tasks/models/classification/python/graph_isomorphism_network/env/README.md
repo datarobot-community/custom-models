@@ -41,4 +41,4 @@ The structure of your custom model archive should look like:
   - artifact.pth
   - custom.py (if needed)
 
-Please read [datarobot-cmrunner](../../custom_model_runner/README.md) documentation on how to assemble **custom.py**.
+Please read [datarobot-cmrunner](https://github.com/datarobot/datarobot-user-models/blob/master/custom_model_runner/README.md) documentation on how to assemble **custom.py**.

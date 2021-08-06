@@ -1,6 +1,6 @@
-# MLOps Examples
+# Custom Models and External Deployments Monitoring
 
-This repository contains multiple examples concerning DataRobot's Machine Learning Operations (MLOps) solution. The scripts can be followed end to end and customised depending on the problem you are trying to solve.
+This repository contains multiple examples concerning DataRobot's MLOps and custom model functionality. The scripts can be followed end to end and customised depending on the problem you are trying to solve.
 
 ## Usage
 

@@ -13,7 +13,7 @@ six==1.15.0
 xgboost==1.2.1
 termcolor==1.1.0
 Theano==0.8.2
-Werkzeug==1.0.1
+Werkzeug==2.0.1
 wrapt==1.12.1
 zipp==3.4.0
 joblib==0.14.0

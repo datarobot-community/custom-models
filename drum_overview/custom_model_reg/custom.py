@@ -16,8 +16,8 @@ def transform(data, model):
     """
     # Execute any steps you need to do before scoring
     # Remove target columns if  they're in the dataset
-    if "MEDV" in data:
-        data.pop("MEDV")
+    if "price" in data:
+        data.pop("concrete_compressive_strength")
     if "Species" in data:
         data.pop("Species")
     data = data.fillna(0)

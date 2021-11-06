@@ -15,7 +15,7 @@ The easiest way to create an environment to both train and test these models wit
 
 ## Important Links
 
-For more information on how to use DRUM to test and deploy your custom models, follow the [link](https://github.com/datarobot-community/mlops-examples/tree/master/MLOps%20DRUM)
+For more information on how to use DRUM to test and deploy your custom models, follow the [link](https://github.com/datarobot-community/custom-models/tree/master/drum_overview)
 
 ## Contents
 

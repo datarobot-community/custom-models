@@ -9,32 +9,6 @@ import io
 def read_input_data(input_binary_data):
     return pd.read_csv(io.BytesIO(input_binary_data))
 
-def fit(
-    X: pd.DataFrame,
-    y: pd.Series,
-    output_dir: str,
-    class_order: Optional[List[str]] = None,
-    row_weights: Optional[np.ndarray] = None,
-    **kwargs,
-) -> None:
-
-    #Take advantage of transform function below - This might not be applicable to your use case, depending on the preprocessing you do.
-    X = transform(X,model=None)
-
-    estimator = CatBoostClassifier(iterations=2,
-                               depth=2,
-                               learning_rate=1,
-                               loss_function='Logloss',
-                               verbose=True)
-
-    cat_features = list(X.select_dtypes(include=object).columns)
-
-    # train the model
-    estimator.fit(X,y,cat_features)
-    
-    #Dumping the model in output_dir --> DataRobot will automatically find pkl files saved there.
-    pickle.dump(estimator, open('{}/model.pkl'.format(output_dir), 'wb'))
-
 
 def transform(data,model):
     """

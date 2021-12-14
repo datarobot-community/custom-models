@@ -26,55 +26,6 @@ def read_input_data(input_binary_data):
     #Saving this for later
     return data
 
-def fit(
-    X: pd.DataFrame,
-    y: pd.Series,
-    output_dir = str,
-    class_order: Optional[List[str]] = None,
-    row_weights: Optional[np.ndarray] = None,
-    **kwargs,
-) -> None:
-
-    X.drop(['diag_1_desc', 'diag_1', 'diag_2', 'diag_3'],axis=1,inplace=True)
-    X = X.astype(schema)
-
-    #Preprocessing for numerical features
-    numeric_features = list(X.select_dtypes('int64').columns)
-    for c in numeric_features:
-        X[c] = X[c].fillna(0)
-    numeric_transformer = Pipeline(steps=[
-        ('scaler', StandardScaler())])
-
-    #Preprocessing for categorical features
-    categorical_features = list(X.select_dtypes('object').columns)
-    for c in categorical_features:
-        X[c] = X[c].fillna('missing')
-    categorical_transformer = Pipeline(steps=[
-        ('OneHotEncoder', OneHotEncoder(handle_unknown='ignore'))])
-
-    #Preprocessor with all of the steps
-    preprocessor = ColumnTransformer(
-        transformers=[
-            ('num', numeric_transformer, numeric_features),
-            ('cat', categorical_transformer, categorical_features)])
-
-    # Full preprocessing pipeline
-    pipeline = Pipeline(steps=[('preprocessor', preprocessor)])
-
-    #Train the model-Pipelines
-    pipeline.fit(X,y)
-
-    #Preprocess x
-    preprocessed = pipeline.transform(X)
-    preprocessed = pd.DataFrame.sparse.from_spmatrix(preprocessed)
-
-    model = XGBClassifier(colsample_bylevel=0.2, max_depth= 10, learning_rate = 0.02, n_estimators=300)
-    model.fit(preprocessed, y)
-
-    joblib.dump(pipeline,'{}/preprocessing.pkl'.format(output_dir))
-    joblib.dump(model,'{}/model.pkl'.format(output_dir))
-
-
 def transform(data, model):
     """
     Note: This hook may not have to be implemented for your model.

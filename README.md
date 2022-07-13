@@ -1,6 +1,13 @@
 # Custom Models and External Deployments Monitoring
 
-This repository contains multiple examples concerning DataRobot's MLOps and custom model functionality. The scripts can be followed end to end and customised depending on the problem you are trying to solve.
+## Important Note
+
+This repo contains a library of commonly used tasks submitted by the DataRobot community. They tend to have more complex logic and are 
+meant to be used as-is rather than as a reference. If you are not familiar with DataRobot's Custom Inference Models, Custom Tasks, or Composable ML
+please see this repo instead for tutorials / reference examples: 
+https://github.com/datarobot/datarobot-user-models
+
+There is also extensive documentation on the platform docs at: https://docs.datarobot.com/
 
 ## Usage
 
